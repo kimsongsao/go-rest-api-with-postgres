@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"kdgitial.com/rest-api-gorm/initializers"
-	"kdgitial.com/rest-api-gorm/models"
+	"github.com/kimsongsao/go-rest-api-with-postgres/models"
 )
 
 func init() {
