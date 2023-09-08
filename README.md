@@ -1,5 +1,5 @@
 # Go RESTful API using GIN & GORM with PostgreSQL
-An example repo of how I like to use postgres with gRPC
+An example repo of how I like to use postgres with GIN & GORM
 ```
 ## Developing
 
