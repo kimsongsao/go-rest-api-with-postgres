@@ -1,4 +1,4 @@
-# Go RESTful API using GIN with PostgreSQL
+# Go RESTful API using GIN & GORM with PostgreSQL
 An example repo of how I like to use postgres with gRPC
 ```
 ## Developing
