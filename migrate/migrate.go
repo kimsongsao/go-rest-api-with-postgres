@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"kdgitial.com/rest-api-gorm/initializers"
+	"github.com/kimsongsao/go-rest-api-with-postgres/initializers"
 	"github.com/kimsongsao/go-rest-api-with-postgres/models"
 )
 

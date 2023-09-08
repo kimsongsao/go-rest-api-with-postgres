@@ -1,4 +1,4 @@
-module kdgitial.com/rest-api-gorm
+module github.com/kimsongsao/go-rest-api-with-postgres
 
 go 1.21.1
 
