@@ -31,6 +31,17 @@ func CreatePost(ctx *gin.Context) {
 
 	ctx.JSON(200, gin.H{"data": post})
 }
+
+// @BasePath /api/v1
+// PingExample godoc
+// @Summary Get posts.
+// @Schemes
+// @Description Get post list
+// @Tags example
+// @Accept json
+// @Produce json
+// @Success 200 {json} data
+// @Router /posts [get]
 func GetPosts(ctx *gin.Context) {
 
 	var posts []models.Post
@@ -44,6 +55,17 @@ func GetPosts(ctx *gin.Context) {
 	ctx.JSON(200, gin.H{"data": posts})
 
 }
+
+// @BasePath /api/v1
+// PingExample godoc
+// @Summary Get a post by id.
+// @Schemes
+// @Description Get post list
+// @Tags example
+// @Accept json
+// @Produce json
+// @Success 200 {json} data
+// @Router /posts/{id} [get]
 func GetPost(ctx *gin.Context) {
 
 	var post models.Post
