@@ -1,8 +1,4 @@
-![Go](https://go.dev/)
-![Postgres](https://www.postgresql.org/)
-![Facebook](https://www.facebook.com/kimsongsao.official)
-![LinkedIn](https://www.linkedin.com/in/kimsongsao/)
-
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kimsongsao/)
 
 # Go RESTful API using GIN & GORM with PostgreSQL
 An example repo of how I like to use postgres with GIN & GORM
