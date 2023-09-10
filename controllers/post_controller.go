@@ -23,6 +23,7 @@ import (
 //	@Failure		400	{object}	httputil.HTTPError
 //	@Failure		404	{object}	httputil.HTTPError
 //	@Failure		500	{object}	httputil.HTTPError
+//	@Security		ApiKeyAuth
 //	@Router			/posts [get]
 func GetPosts(ctx *gin.Context) {
 	var posts []models.Post
@@ -48,6 +49,7 @@ func GetPosts(ctx *gin.Context) {
 //	@Failure		400	{object}	httputil.HTTPError
 //	@Failure		404	{object}	httputil.HTTPError
 //	@Failure		500	{object}	httputil.HTTPError
+//	@Security		ApiKeyAuth
 //	@Router			/posts/{id} [get]
 func GetPost(ctx *gin.Context) {
 	var post models.Post
@@ -71,6 +73,7 @@ func GetPost(ctx *gin.Context) {
 //	@Failure		400		{object}	httputil.HTTPError
 //	@Failure		404		{object}	httputil.HTTPError
 //	@Failure		500		{object}	httputil.HTTPError
+//	@Security		ApiKeyAuth
 //	@Router			/posts [post]
 func CreatePost(ctx *gin.Context) {
 	var body requests.PostRequest
@@ -78,8 +81,16 @@ func CreatePost(ctx *gin.Context) {
 		httputil.NewError(ctx, http.StatusBadRequest, err)
 		return
 	}
+	// same as before...
+	user, exists := ctx.Get("user")
 
-	post := models.Post{Title: body.Title, Body: body.Body, Likes: body.Likes, Draft: body.Draft, Author: body.Author}
+	if !exists {
+		ctx.JSON(http.StatusNotFound, gin.H{"error": "User not found."})
+		return
+	}
+
+	body.UserID = user.(models.User).ID
+	post := models.Post{Title: body.Title, Body: body.Body, Likes: body.Likes, Draft: body.Draft, Author: body.Author, UserID: body.UserID}
 
 	fmt.Println(post)
 	result := config.DB.Create(&post)
@@ -105,6 +116,7 @@ func CreatePost(ctx *gin.Context) {
 //	@Failure		400		{object}	httputil.HTTPError
 //	@Failure		404		{object}	httputil.HTTPError
 //	@Failure		500		{object}	httputil.HTTPError
+//	@Security		ApiKeyAuth
 //	@Router			/posts/{id} [put]
 func UpdatePost(ctx *gin.Context) {
 	var body requests.PostRequest
@@ -138,6 +150,7 @@ func UpdatePost(ctx *gin.Context) {
 //	@Failure		400	{object}	httputil.HTTPError
 //	@Failure		404	{object}	httputil.HTTPError
 //	@Failure		500	{object}	httputil.HTTPError
+//	@Security		ApiKeyAuth
 //	@Router			/posts/{id} [delete]
 func DeletePost(ctx *gin.Context) {
 

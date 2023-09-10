@@ -3,6 +3,7 @@ package main
 import (
 	"golangrestapi/config"
 	"golangrestapi/controllers"
+	"golangrestapi/middlewares"
 
 	_ "golangrestapi/docs"
 
@@ -40,12 +41,20 @@ func main() {
 	{
 		posts := v1.Group("/posts")
 		{
-			posts.GET(":id", controllers.GetPost)
-			posts.GET("", controllers.GetPosts)
-			posts.POST("", controllers.CreatePost)
-			posts.DELETE(":id", controllers.DeletePost)
-			posts.PUT(":id", controllers.UpdatePost)
+			posts.GET(":id", middlewares.RequireAuth, controllers.GetPost)
+			posts.GET("", middlewares.RequireAuth, controllers.GetPosts)
+			posts.POST("", middlewares.RequireAuth, controllers.CreatePost)
+			posts.DELETE(":id", middlewares.RequireAuth, controllers.DeletePost)
+			posts.PUT(":id", middlewares.RequireAuth, controllers.UpdatePost)
 			// posts.POST(":id/images", c.UploadAccountImage)
+		}
+		users := v1.Group("/users")
+		{
+			users.POST("/signup", controllers.Signup)
+			users.POST("/login", controllers.Login)
+			users.POST("/auth", controllers.Validate)
+			users.POST("/logout", controllers.Logout)
+			users.GET("", middlewares.RequireAuth, controllers.GetUsers)
 		}
 	}
 	r.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
