@@ -377,7 +377,7 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "localhost:3000",
 	BasePath:         "/api/v1",
 	Schemes:          []string{},
-	Title:            "Swagger Rest API with GIN & GORM",
+	Title:            "Golang RESTful API with GIN, GORM & PostgreSQL",
 	Description:      "This is a sample server celler server.",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,

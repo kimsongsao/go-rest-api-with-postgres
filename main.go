@@ -18,7 +18,7 @@ func init() {
 	config.DatabaseInit()
 }
 
-// @title						Swagger Rest API with GIN & GORM
+// @title						Golang RESTful API with GIN, GORM & PostgreSQL
 // @version					1.0
 // @description				This is a sample server celler server.
 // @termsOfService				http://swagger.io/terms/
@@ -43,7 +43,7 @@ func main() {
 			posts.GET(":id", controllers.GetPost)
 			posts.GET("", controllers.GetPosts)
 			posts.POST("", controllers.CreatePost)
-			// posts.DELETE(":id", controllers.DeletePost)
+			posts.DELETE(":id", controllers.DeletePost)
 			posts.PUT(":id", controllers.UpdatePost)
 			// posts.POST(":id/images", c.UploadAccountImage)
 		}

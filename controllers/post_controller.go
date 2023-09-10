@@ -99,7 +99,7 @@ func CreatePost(ctx *gin.Context) {
 //	@Tags			posts
 //	@Accept			json
 //	@Produce		json
-//	@Param			id		path		int			true	"Post Id"
+//	@Param			id		path		int						true	"Post Id"
 //	@Param			request	body		requests.PostRequest	true	"Post Update Data"
 //	@Success		200		{object}	models.Post
 //	@Failure		400		{object}	httputil.HTTPError
