@@ -141,7 +141,7 @@ func Login(ctx *gin.Context) {
 //	@Router			/users/auth [post]
 func Validate(ctx *gin.Context) {
 	user, err := ctx.Get("user")
-	if err != false {
+	if !err {
 		ctx.JSON(500, gin.H{"error": err})
 		return
 	}
