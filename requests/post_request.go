@@ -1,9 +1,6 @@
-package models
+package requests
 
-import "gorm.io/gorm"
-
-type Post struct {
-	gorm.Model
+type PostRequest struct {
 	Title  string `json:"title"`
 	Body   string `json:"body"`
 	Likes  int    `json:"likes"`
