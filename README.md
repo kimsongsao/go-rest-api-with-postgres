@@ -31,3 +31,6 @@ go run main.go
 ```
 http://localhost:3000/docs/index.html
 ```
+
+## Project Structures
+![Project Structures](https://raw.githubusercontent.com/kimsongsao/go-rest-api-with-postgres/main/projectstruture.png)
