@@ -1,3 +1,5 @@
+[![Go](https://github.com/fullstackhero/dotnet-webapi-boilerplate/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/fullstackhero/dotnet-webapi-boilerplate/actions/workflows/dotnet.yml)
+
 ![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)(https://go.dev/)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)(https://www.postgresql.org/)
 ![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)(https://www.facebook.com/kimsongsao.official)
